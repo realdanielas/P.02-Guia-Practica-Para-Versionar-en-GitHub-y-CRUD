@@ -1,0 +1,6 @@
+@P._02_Guia_Practica_Para_Versionar_en_GitHub_y_CRUD_HostAddress = http://localhost:5237
+
+GET {{P._02_Guia_Practica_Para_Versionar_en_GitHub_y_CRUD_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
