@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
+using P._02_Guia_Practica_Para_Versionar_en_GitHub_y_CRUD.Models;
 
 namespace P._02_Guia_Practica_Para_Versionar_en_GitHub_y_CRUD
 {
@@ -10,6 +13,12 @@ namespace P._02_Guia_Practica_Para_Versionar_en_GitHub_y_CRUD
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbContext<equiposContext>(options =>
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("equiposDbConnection")
+                    )
+                );
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
